@@ -1,0 +1,27 @@
+{% extends 'portfolio/base.html' %}{% block title %}Posts · Suresh Shahi{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <p class="eyebrow">NOTES</p>
+  <h1>Posts</h1>
+  <p>Notes on IT support, development and travel — lessons from training, real support work and the trail.</p>
+  <div class="list-count"><b>{{ posts|length }}</b> article{{ posts|length|pluralize }}</div>
+</section>
+<main class="paper-shell">
+<section class="section">
+  <div class="grid3 reveal-stagger">
+    {% for post in posts %}
+    <article class="simple-card post-card">
+      {% if post.cover_image %}<a class="post-media" href="{{ post.get_absolute_url }}"><img src="{{ post.cover_image.url }}" alt="{{ post.title }}"></a>{% endif %}
+      <span class="pill">{{ post.get_category_display }}</span>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt }}</p>
+      <div class="post-meta"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"M Y" }}</div>
+      <a class="text-link" href="{{ post.get_absolute_url }}" style="margin-top:12px;display:inline-block">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+    </article>
+    {% empty %}
+    <div class="empty-state" style="grid-column:1/-1"><i class="fa-regular fa-note-sticky"></i><p>No posts published yet — the first article is on the way.</p></div>
+    {% endfor %}
+  </div>
+</section>
+</main>
+{% endblock %}

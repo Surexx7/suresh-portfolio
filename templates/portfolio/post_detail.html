@@ -1,0 +1,17 @@
+{% extends 'portfolio/base.html' %}{% block title %}{{ post.title }} · Suresh Shahi{% endblock %}
+{% block content %}
+<main class="detail-page">
+  <section class="detail-hero" {% if post.cover_image %}style="background-image:linear-gradient(0deg,rgba(2,15,24,.92),rgba(2,15,24,.25)),url('{{ post.cover_image.url }}')"{% endif %}>
+    <div>
+      <a class="back-link" href="{% url 'posts' %}"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
+      <p class="eyebrow">{{ post.get_category_display|upper }}</p>
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.excerpt }}</p>
+    </div>
+  </section>
+  <section class="inner detail reveal">
+    <div class="post-meta" style="margin-bottom:24px"><i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"F j, Y" }}</div>
+    <div class="article-body">{{ post.body|linebreaks }}</div>
+  </section>
+</main>
+{% endblock %}

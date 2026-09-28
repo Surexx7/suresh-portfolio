@@ -1,0 +1,35 @@
+{% extends 'portfolio/base.html' %}{% block title %}Projects · Suresh Shahi{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <p class="eyebrow">WHAT I'VE BUILT</p>
+  <h1>Projects</h1>
+  <p>Web apps, civic technology and AI experiments — built to solve a real problem, not just to fill a portfolio.</p>
+  <div class="list-count"><b>{{ projects|length }}</b> project{{ projects|length|pluralize }}</div>
+</section>
+<main class="paper-shell">
+<section class="section">
+  <div class="grid3 project-grid reveal-stagger">
+    {% for project in projects %}
+    <article class="project-card">
+      <a class="project-media" href="{{ project.get_absolute_url }}">
+        {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% else %}<div class="placeholder"><i class="fa-solid fa-code"></i></div>{% endif %}
+        <span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+      </a>
+      <div class="card-body">
+        <div class="tags">{% for tech in project.technologies|slice:':3' %}<span>{{ tech }}</span>{% endfor %}</div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.short_description }}</p>
+        <div class="card-actions">
+          {% if project.live_url %}<a class="btn primary small" href="{{ project.live_url }}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>{% endif %}
+          {% if project.github_url %}<a class="btn outline small" href="{{ project.github_url }}" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>{% endif %}
+          <a class="btn outline small" href="{{ project.get_absolute_url }}">Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+    {% empty %}
+    <div class="empty-state" style="grid-column:1/-1"><i class="fa-solid fa-folder-open"></i><p>No projects published yet — check back soon.</p></div>
+    {% endfor %}
+  </div>
+</section>
+</main>
+{% endblock %}

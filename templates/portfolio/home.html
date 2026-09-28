@@ -1,0 +1,46 @@
+{% extends 'portfolio/base.html' %}{% load static %}{% block content %}
+<section class="hero premium-hero" style="--hero:url('{% static "images/travel/heropicture.jpg" %}')">
+  <div class="hero-copy reveal">
+    <p class="eyebrow">DEVELOPER · IT SUPPORT SPECIALIST · EXPLORER</p>
+    <h1>Building Technology.<br><em>Exploring Further.</em></h1>
+    <p>I’m Suresh Shahi — an IT Support Specialist and web developer who enjoys solving technical problems, building useful web applications and exploring mountains beyond the screen.</p>
+    <div class="actions"><a class="btn primary" href="#projects">View My Work <i class="fa-solid fa-arrow-right"></i></a><a class="btn ghost" href="#about">About Me <i class="fa-solid fa-arrow-right"></i></a></div>
+    <div class="social-icons"><a href="https://www.linkedin.com/in/suresh-shahi-0b689b28a/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://github.com/Surexx7" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://www.instagram.com/suresh_shahi7" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="#contact"><i class="fa-regular fa-envelope"></i></a></div>
+  </div>
+  <div class="hero-quote">Mountains<br>Keep Me Going <span>↗</span></div>
+  <div class="hero-chip"><i class="fa-solid fa-location-dot"></i><span>Based in<br><b>Kathmandu, Nepal</b></span></div>
+</section>
+
+<main class="paper-shell">
+<section id="about" class="expertise grid3 reveal-stagger">
+  <article><div class="expertise-icon blue"><i class="fa-solid fa-laptop-code"></i></div><h3>Development</h3><p>Django, Python and useful web applications.</p><a href="{% url 'projects' %}">Explore Projects <i class="fa-solid fa-arrow-right"></i></a></article>
+  <article><div class="expertise-icon teal"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>IT Support</h3><p>Systems, networks, Microsoft 365 and end-user support.</p><a href="#experience">View Experience <i class="fa-solid fa-arrow-right"></i></a></article>
+  <article><div class="expertise-icon green"><i class="fa-solid fa-mountain"></i></div><h3>Adventure</h3><p>Trekking, hiking, photography and travel stories.</p><a href="{% url 'adventures' %}">See Adventures <i class="fa-solid fa-arrow-right"></i></a></article>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-head"><div><p class="eyebrow">FEATURED PROJECTS</p><h2>Projects That Make a Difference</h2><p>Things I’ve built across web, civic technology and AI.</p></div><a class="text-link" href="{% url 'projects' %}">View All Projects <i class="fa-solid fa-arrow-right"></i></a></div>
+  <div class="grid3 project-grid reveal-stagger">{% for project in projects %}<article class="project-card">
+    <a class="project-media" href="{{ project.get_absolute_url }}">{% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% else %}<div class="placeholder"><i class="fa-solid fa-code"></i></div>{% endif %}<span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+    <div class="card-body"><div class="tags">{% for tech in project.technologies|slice:':3' %}<span>{{ tech }}</span>{% endfor %}</div><h3>{{ project.title }}</h3><p>{{ project.short_description }}</p><div class="card-actions">{% if project.live_url %}<a class="btn primary small" href="{{ project.live_url }}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>{% endif %}{% if project.github_url %}<a class="btn outline small" href="{{ project.github_url }}" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>{% else %}<a class="btn outline small" href="{{ project.get_absolute_url }}">Details</a>{% endif %}</div></div>
+  </article>{% endfor %}</div>
+</section>
+
+<section id="skills" class="tech-compact reveal">
+  <div class="tech-heading"><div><p class="eyebrow">TECH STACK</p><h2>Tools I Work With</h2></div><p>Development · IT Systems · Creative Tools</p></div>
+  <div class="skill-strip reveal-stagger">{% for skill in skills %}<div class="skill-mini {{ skill.category }}" style="animation-delay:{% widthratio forloop.counter0 1 45 %}ms" title="{{ skill.get_category_display }}">{% if skill.icon_class %}<i class="{{ skill.icon_class }}"></i>{% else %}<strong>{{ skill.short_code|default:skill.name|slice:':3' }}</strong>{% endif %}<span>{{ skill.name }}</span></div>{% endfor %}</div>
+</section>
+
+<section id="experience" class="section journey reveal"><p class="eyebrow">MY JOURNEY</p><div class="section-head compact"><div><h2>From Learning to Building & Supporting</h2><p>Technology, support, development and the experiences in between.</p></div></div><div class="timeline">{% for item in experiences %}<article><b>{{ forloop.counter|stringformat:'02d' }}</b><h3>{{ item.title }}</h3><strong>{{ item.organization }}</strong><small>{{ item.date_label }}</small><p>{{ item.description }}</p></article>{% endfor %}</div></section>
+
+<section class="section adventures-home">
+  <div class="section-head"><div><p class="eyebrow">LATEST ADVENTURES</p><h2>Exploring New Horizons</h2><p>Every trek has a story. Open an adventure to see the journey, photos and its Instagram post.</p></div><a class="text-link" href="{% url 'adventures' %}">View All Adventures <i class="fa-solid fa-arrow-right"></i></a></div>
+  <div class="adventure-grid reveal-stagger">{% for a in adventures %}<a class="adventure" href="{{ a.get_absolute_url }}" {% if a.cover_image %}style="background-image:linear-gradient(0deg,rgba(2,24,37,.94),rgba(2,24,37,.02) 68%),url('{{ a.cover_image.url }}')"{% endif %}><span class="adventure-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span><div><small>{{ a.location }}</small><h3>{{ a.title }}</h3><p>{{ a.summary }}</p><span class="story-link">Explore Journey <i class="fa-solid fa-arrow-right"></i></span></div></a>{% endfor %}</div>
+  <a class="instagram-banner" href="https://www.instagram.com/suresh_shahi7" target="_blank"><i class="fa-brands fa-instagram"></i><span><small>TRAVEL · NATURE · PHOTOGRAPHY</small><b>Collecting Moments Around the World</b></span><strong>Follow My Journey <i class="fa-solid fa-arrow-right"></i></strong></a>
+</section>
+
+<section id="posts" class="section"><div class="section-head"><div><p class="eyebrow">KNOWLEDGE & POSTS</p><h2>IT Support, Development & Travel</h2></div><a class="text-link" href="{% url 'posts' %}">All Posts <i class="fa-solid fa-arrow-right"></i></a></div><div class="grid3 reveal-stagger">{% for post in posts %}<article class="simple-card"><span class="pill">{{ post.get_category_display }}</span><h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p><a class="text-link" href="{{ post.get_absolute_url }}">Read Article <i class="fa-solid fa-arrow-right"></i></a></article>{% endfor %}</div></section>
+
+<section id="contact" class="contact section reveal"><div><p class="eyebrow">LET'S CONNECT</p><h2>Have an idea, IT question or collaboration?</h2><p>Send me a message and I’ll get back to you.</p><div class="contact-social"><a href="https://www.linkedin.com/in/suresh-shahi-0b689b28a/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="https://github.com/Surexx7" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></div></div><form method="post">{% csrf_token %}<div class="form-row"><input name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Email address" required></div><input name="subject" placeholder="Subject"><textarea name="message" rows="5" placeholder="Tell me about it..." required></textarea><button class="btn primary" type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button></form></section>
+</main>
+{% endblock %}

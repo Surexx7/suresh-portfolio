@@ -1,0 +1,33 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Suresh Shahi · Developer · IT Support · Explorer{% endblock %}</title>
+  <meta name="description" content="Suresh Shahi — IT Support Specialist, Web Developer and Explorer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="{% url 'home' %}"><span class="brand-mark"><img src="{% static 'images/profile.png' %}" alt="Suresh Shahi"></span><b>Suresh Shahi<small>Developer · IT Support · Explorer</small></b></a>
+  <button class="menu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  <nav>
+    <a href="{% url 'home' %}#about">About</a><a href="{% url 'projects' %}">Projects</a><a href="{% url 'home' %}#skills">Skills</a><a href="{% url 'home' %}#experience">Experience</a><a href="{% url 'adventures' %}">Adventures</a><a href="{% url 'posts' %}">Blog</a><a href="{% url 'home' %}#contact">Contact</a>
+  </nav>
+  <a class="btn light resume" href="{% static 'files/Suresh_Shahi_Resume.pdf' %}" target="_blank">Resume <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+</header>
+{% if messages %}<div class="flash">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}
+{% block content %}{% endblock %}
+<footer class="site-footer">
+  <div class="footer-brand"><span class="brand-mark"><img src="{% static 'images/profile.jpg' %}" alt="Suresh Shahi"></span><div><b>Suresh Shahi</b><small>Developer · IT Support Specialist · Explorer</small></div></div>
+  <div class="footer-links"><a href="{% url 'home' %}">Home</a><a href="{% url 'projects' %}">Projects</a><a href="{% url 'adventures' %}">Adventures</a><a href="{% url 'posts' %}">Blog</a><a href="{% url 'home' %}#contact">Contact</a></div>
+  <div class="footer-social"><a href="https://www.linkedin.com/in/suresh-shahi-0b689b28a/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://github.com/Surexx7" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.instagram.com/suresh_shahi7" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
+  <small class="copyright">© {% now "Y" %} All rights reserved | Designed and developed by Suresh Shahi</small>
+</footer>
+<script src="{% static 'js/main.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body></html>

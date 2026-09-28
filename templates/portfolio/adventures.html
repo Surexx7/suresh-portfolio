@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}{% block title %}Adventures · Suresh Shahi{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <p class="eyebrow">TRAVEL JOURNAL</p>
+  <h1>Adventures</h1>
+  <p>Mountains, trails and the moments in between. Every trip has a story, photos and an Instagram post behind it.</p>
+  <div class="list-count"><b>{{ adventures|length }}</b> journey{{ adventures|length|pluralize:"y,ies" }}</div>
+</section>
+<main class="paper-shell">
+<section class="section">
+  <div class="adventure-grid reveal-stagger">
+    {% for a in adventures %}
+    <a class="adventure" href="{{ a.get_absolute_url }}" {% if a.cover_image %}style="background-image:linear-gradient(0deg,rgba(2,24,37,.94),rgba(2,24,37,.02) 68%),url('{{ a.cover_image.url }}')"{% endif %}>
+      <span class="adventure-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+      <div>
+        <small>{{ a.location }}</small>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.summary }}</p>
+        <span class="story-link">Explore Journey <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+    {% empty %}
+    <div class="empty-state" style="grid-column:1/-1"><i class="fa-solid fa-mountain"></i><p>No adventures published yet — the next trail is still being planned.</p></div>
+    {% endfor %}
+  </div>
+  <a class="instagram-banner" href="https://www.instagram.com/suresh_shahi7" target="_blank"><i class="fa-brands fa-instagram"></i><span><small>TRAVEL · NATURE · PHOTOGRAPHY</small><b>Collecting Moments Around the World</b></span><strong>Follow My Journey <i class="fa-solid fa-arrow-right"></i></strong></a>
+</section>
+</main>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}{% block title %}{{ adventure.title }} · Suresh Shahi{% endblock %}
+{% block content %}
+<main class="adventure-detail-page">
+  <section class="adventure-detail-hero" {% if adventure.cover_image %}style="background-image:linear-gradient(0deg,rgba(2,24,37,.88),rgba(2,24,37,.08)),url('{{ adventure.cover_image.url }}')"{% endif %}>
+    <div><a class="back-link" href="{% url 'adventures' %}"><i class="fa-solid fa-arrow-left"></i> All Adventures</a><p class="eyebrow">TRAVEL JOURNAL · {{ adventure.location|upper }}</p><h1>{{ adventure.title }}</h1><p>{{ adventure.summary }}</p></div>
+  </section>
+  <section class="adventure-story-layout">
+    <article class="travel-story reveal"><p class="eyebrow">THE JOURNEY</p><h2>A little story from the trail</h2><div class="story-copy">{{ adventure.story|default:adventure.summary|linebreaks }}</div>
+      {% if adventure.photos.all %}<div class="travel-gallery">{% for photo in adventure.photos.all %}<figure><img src="{{ photo.image.url }}" alt="{{ photo.caption|default:adventure.title }}" loading="lazy"><figcaption>{{ photo.caption }}</figcaption></figure>{% endfor %}</div>{% endif %}
+    </article>
+    <aside class="instagram-embed-card reveal"><div class="embed-heading"><i class="fa-brands fa-instagram"></i><div><small>FROM MY INSTAGRAM</small><b>Travel Post</b></div></div>
+      {% if adventure.instagram_post_url %}
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="{{ adventure.instagram_post_url }}" data-instgrm-version="14"><a href="{{ adventure.instagram_post_url }}" target="_blank">View this post on Instagram</a></blockquote>
+      {% else %}
+      <div class="embed-empty"><i class="fa-brands fa-instagram"></i><h3>Add the Instagram post</h3><p>In Django Admin, open this adventure and paste the URL of its Instagram post or reel into <b>Instagram post URL</b>.</p>{% if adventure.instagram_url %}<a class="btn primary" href="{{ adventure.instagram_url }}" target="_blank">Open Instagram</a>{% endif %}</div>
+      {% endif %}
+    </aside>
+  </section>
+</main>
+{% endblock %}
+{% block extra_js %}{% if adventure.instagram_post_url %}<script async src="https://www.instagram.com/embed.js"></script>{% endif %}{% endblock %}

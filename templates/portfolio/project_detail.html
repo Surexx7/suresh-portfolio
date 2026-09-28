@@ -1,0 +1,30 @@
+{% extends 'portfolio/base.html' %}{% block title %}{{ project.title }} · Suresh Shahi{% endblock %}
+{% block content %}
+<main class="detail-page">
+  <section class="detail-hero" {% if project.image %}style="background-image:linear-gradient(0deg,rgba(2,15,24,.92),rgba(2,15,24,.25)),url('{{ project.image.url }}')"{% endif %}>
+    <div>
+      <a class="back-link" href="{% url 'projects' %}"><i class="fa-solid fa-arrow-left"></i> All Projects</a>
+      <p class="eyebrow">PROJECT</p>
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.short_description }}</p>
+    </div>
+  </section>
+
+  <section class="project-story-layout">
+    <article class="project-story reveal">
+      <p class="eyebrow">OVERVIEW</p>
+      <h2>About this project</h2>
+      <div class="tags" style="margin-bottom:22px">{% for tech in project.technologies %}<span>{{ tech }}</span>{% endfor %}</div>
+      <div class="article-body">{{ project.description|default:project.short_description|linebreaks }}</div>
+    </article>
+
+    <aside class="detail-side-card reveal">
+      <h4>PROJECT DETAILS</h4>
+      <div class="detail-fact"><span>Stack</span><span>{{ project.stack }}</span></div>
+      {% if project.live_url %}<div class="detail-fact"><span>Status</span><span>Live</span></div>{% endif %}
+      {% if project.live_url %}<a class="btn primary" href="{{ project.live_url }}" target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>{% endif %}
+      {% if project.github_url %}<a class="btn outline" href="{{ project.github_url }}" target="_blank"><i class="fa-brands fa-github"></i> View Source</a>{% endif %}
+    </aside>
+  </section>
+</main>
+{% endblock %}
