@@ -1,19 +1,7 @@
-"""
-Django settings for Suresh Shahi Portfolio.
-
-Local development:
-    - SQLite
-    - DEBUG=True
-    - Local static/media files
-
-Production on Render:
-    - PostgreSQL through DATABASE_URL
-    - DEBUG=False
-    - WhiteNoise for static files
-"""
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 import dj_database_url
 
 
@@ -23,6 +11,8 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+load_dotenv(BASE_DIR / '.env')
 
 # ============================================================
 # SECURITY
@@ -108,6 +98,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'cloudinary_storage',
+    'cloudinary',
 
     # Portfolio application
     "portfolio",
@@ -292,21 +284,18 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # WhiteNoise production static-file storage
 
 STORAGES = {
-
     "default": {
-
-        "BACKEND":
-            "django.core.files.storage.FileSystemStorage",
-
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
-
     "staticfiles": {
-
-        "BACKEND":
-            "whitenoise.storage.CompressedManifestStaticFilesStorage",
-
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
+}
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
 
