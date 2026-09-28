@@ -1,0 +1,467 @@
+[
+{
+  "model": "portfolio.project",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "title": "MediStreak",
+    "slug": "medistreak",
+    "short_description": "Gamified medical learning platform with interactive case simulations, diagnosis quizzes, progress tracking and community learning.",
+    "description": "MediStreak is a medical learning platform built to make practice more interactive through cases, quizzes and progress-oriented learning.",
+    "stack": "Django, Python, JavaScript, HTML, CSS",
+    "image": "projects/ChatGPT_Image_Sep_26_2026_01_39_42_AM.png",
+    "live_url": "https://medistreak-platform.onrender.com/",
+    "github_url": "https://github.com/Surexx7/medistreak-platform",
+    "featured": true,
+    "published": true,
+    "created_at": "2026-09-25T19:30:11.255Z"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "title": "CivicEye",
+    "slug": "civiceye",
+    "short_description": "Mobile-first civic engagement platform for Nepal’s urban municipalities with AI-assisted issue detection and routing.",
+    "description": "Academic project using React Native, Django REST API and PostgreSQL, with computer vision and NLP components.",
+    "stack": "React Native, Django REST, PostgreSQL, Machine Learning",
+    "image": "",
+    "live_url": "",
+    "github_url": "",
+    "featured": true,
+    "published": true,
+    "created_at": "2026-09-25T19:30:11.293Z"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "title": "Texas College Chatbot",
+    "slug": "texas-college-chatbot",
+    "short_description": "AI-powered chatbot designed to help students with college-related queries using Python and NLP.",
+    "description": "Student-assistance chatbot project using Python, machine learning and natural language processing.",
+    "stack": "Python, NLP, Machine Learning",
+    "image": "",
+    "live_url": "",
+    "github_url": "",
+    "featured": true,
+    "published": true,
+    "created_at": "2026-09-25T19:30:11.302Z"
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "name": "Python",
+    "category": "development",
+    "short_code": "Py",
+    "icon_class": "fa-brands fa-python",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "name": "Django",
+    "category": "development",
+    "short_code": "dj",
+    "icon_class": "fa-solid fa-code",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "name": "HTML5",
+    "category": "development",
+    "short_code": "5",
+    "icon_class": "fa-brands fa-html5",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "name": "CSS3",
+    "category": "development",
+    "short_code": "#",
+    "icon_class": "fa-brands fa-css3-alt",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "name": "JavaScript",
+    "category": "development",
+    "short_code": "JS",
+    "icon_class": "fa-brands fa-js",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "name": "Bootstrap",
+    "category": "development",
+    "short_code": "B",
+    "icon_class": "fa-brands fa-bootstrap",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "name": "PHP",
+    "category": "development",
+    "short_code": "PHP",
+    "icon_class": "fa-brands fa-php",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 8,
+  "fields": {
+    "order": 8,
+    "name": "REST APIs",
+    "category": "development",
+    "short_code": "API",
+    "icon_class": "fa-solid fa-plug",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 9,
+  "fields": {
+    "order": 1,
+    "name": "Windows Server",
+    "category": "systems",
+    "short_code": "WS",
+    "icon_class": "fa-brands fa-windows",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 10,
+  "fields": {
+    "order": 2,
+    "name": "Active Directory",
+    "category": "systems",
+    "short_code": "AD",
+    "icon_class": "fa-solid fa-users-gear",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 11,
+  "fields": {
+    "order": 3,
+    "name": "Microsoft 365",
+    "category": "systems",
+    "short_code": "365",
+    "icon_class": "fa-brands fa-microsoft",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 12,
+  "fields": {
+    "order": 4,
+    "name": "Intune",
+    "category": "systems",
+    "short_code": "IN",
+    "icon_class": "fa-solid fa-shield-halved",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 13,
+  "fields": {
+    "order": 5,
+    "name": "Defender",
+    "category": "systems",
+    "short_code": "DF",
+    "icon_class": "fa-solid fa-shield",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 14,
+  "fields": {
+    "order": 6,
+    "name": "VMware",
+    "category": "systems",
+    "short_code": "VM",
+    "icon_class": "fa-solid fa-server",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 15,
+  "fields": {
+    "order": 7,
+    "name": "Hyper-V",
+    "category": "systems",
+    "short_code": "HV",
+    "icon_class": "fa-solid fa-cubes",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 16,
+  "fields": {
+    "order": 8,
+    "name": "Networking",
+    "category": "systems",
+    "short_code": "NET",
+    "icon_class": "fa-solid fa-network-wired",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 17,
+  "fields": {
+    "order": 1,
+    "name": "GitHub",
+    "category": "tools",
+    "short_code": "Git",
+    "icon_class": "fa-brands fa-github",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 18,
+  "fields": {
+    "order": 2,
+    "name": "VS Code",
+    "category": "tools",
+    "short_code": "VS",
+    "icon_class": "fa-solid fa-code",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 19,
+  "fields": {
+    "order": 3,
+    "name": "Figma",
+    "category": "tools",
+    "short_code": "Fg",
+    "icon_class": "fa-brands fa-figma",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 20,
+  "fields": {
+    "order": 4,
+    "name": "Canva",
+    "category": "tools",
+    "short_code": "Ca",
+    "icon_class": "fa-solid fa-palette",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 21,
+  "fields": {
+    "order": 5,
+    "name": "Photoshop",
+    "category": "tools",
+    "short_code": "Ps",
+    "icon_class": "fa-solid fa-image",
+    "featured": true
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "title": "B.Sc. CSIT",
+    "organization": "Texas International College",
+    "location": "",
+    "start_date": null,
+    "end_date": null,
+    "date_label": "2022 – Present",
+    "description": "Computer Science & Information Technology.",
+    "current": false
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "title": "IT Support Training",
+    "organization": "TechSkills Institute",
+    "location": "",
+    "start_date": null,
+    "end_date": null,
+    "date_label": "Dec 2025 – Present",
+    "description": "Windows Server, Active Directory, Microsoft 365, networking and virtualization.",
+    "current": false
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "title": "IT Support Specialist",
+    "organization": "Active IT — Australia",
+    "location": "",
+    "start_date": null,
+    "end_date": null,
+    "date_label": "Current",
+    "description": "Systems and end-user support in a professional environment.",
+    "current": true
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "title": "Web Development",
+    "organization": "Personal & Academic Projects",
+    "location": "",
+    "start_date": null,
+    "end_date": null,
+    "date_label": "Ongoing",
+    "description": "Django, Python and modern web applications.",
+    "current": false
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "title": "Explorer",
+    "organization": "Nepal",
+    "location": "",
+    "start_date": null,
+    "end_date": null,
+    "date_label": "Always",
+    "description": "Trekking, hiking and travel photography.",
+    "current": false
+  }
+},
+{
+  "model": "portfolio.adventure",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "title": "Langtang Trek",
+    "slug": "langtang-trek",
+    "location": "Nepal",
+    "summary": "Mountains, trails and moments from the journey.",
+    "story": "This is the place for the story behind this adventure. Open Django Admin → Adventures and write a short personal journey: why you went, the trail, memorable moments, challenges and what the trip meant to you.",
+    "cover_image": "adventures/langtang.jpg",
+    "instagram_post_url": "",
+    "instagram_url": "https://www.instagram.com/suresh_shahi7",
+    "featured": true,
+    "published": true
+  }
+},
+{
+  "model": "portfolio.adventure",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "title": "Mardi Himal",
+    "slug": "mardi-himal",
+    "location": "Nepal",
+    "summary": "Mountains, trails and moments from the journey.",
+    "story": "This is the place for the story behind this adventure. Open Django Admin → Adventures and write a short personal journey: why you went, the trail, memorable moments, challenges and what the trip meant to you.",
+    "cover_image": "adventures/mardi.jpg",
+    "instagram_post_url": "",
+    "instagram_url": "https://www.instagram.com/suresh_shahi7",
+    "featured": true,
+    "published": true
+  }
+},
+{
+  "model": "portfolio.adventure",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "title": "Panch Pokhari",
+    "slug": "panch-pokhari",
+    "location": "Nepal",
+    "summary": "Mountains, trails and moments from the journey.",
+    "story": "This is the place for the story behind this adventure. Open Django Admin → Adventures and write a short personal journey: why you went, the trail, memorable moments, challenges and what the trip meant to you.",
+    "cover_image": "adventures/panch-pokhari.jpg",
+    "instagram_post_url": "",
+    "instagram_url": "https://www.instagram.com/suresh_shahi7",
+    "featured": true,
+    "published": true
+  }
+},
+{
+  "model": "portfolio.adventure",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "title": "Travel Moments",
+    "slug": "travel-moments",
+    "location": "Keep exploring",
+    "summary": "Mountains, trails and moments from the journey.",
+    "story": "This is the place for the story behind this adventure. Open Django Admin → Adventures and write a short personal journey: why you went, the trail, memorable moments, challenges and what the trip meant to you.",
+    "cover_image": "adventures/langtang-trail.jpg",
+    "instagram_post_url": "",
+    "instagram_url": "https://www.instagram.com/suresh_shahi7",
+    "featured": true,
+    "published": true
+  }
+},
+{
+  "model": "portfolio.post",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "title": "My IT Support Learning Journey",
+    "slug": "my-it-support-learning-journey",
+    "category": "it-support",
+    "excerpt": "Notes and lessons from practical IT support training and real-world support work.",
+    "body": "Use Django Admin to replace this starter article with your training posts, troubleshooting notes, Microsoft 365 tips, Windows Server lessons and other IT support content.",
+    "cover_image": "",
+    "published": true,
+    "created_at": "2026-09-25T19:30:11.627Z",
+    "updated_at": "2026-09-25T19:30:11.627Z"
+  }
+}
+]
