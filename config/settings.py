@@ -38,6 +38,8 @@ DEBUG = os.environ.get("RENDER") is None
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    'sureshshahi7.com.np',
+    'www.sureshshahi7.com.np',
 ]
 
 
@@ -67,15 +69,15 @@ if RENDER_EXTERNAL_HOSTNAME:
 # CSRF TRUSTED ORIGINS
 # ============================================================
 
-CSRF_TRUSTED_ORIGINS = []
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://sureshshahi7.com.np',
+    'https://www.sureshshahi7.com.np',
+]
 
 if RENDER_EXTERNAL_HOSTNAME:
-
     CSRF_TRUSTED_ORIGINS.append(
-        f"https://{RENDER_EXTERNAL_HOSTNAME}"
+        f'https://{RENDER_EXTERNAL_HOSTNAME}'
     )
-
 
 # Later, for a custom domain:
 #
